@@ -18,3 +18,10 @@ yarn dev
 ```sh
 yarn build
 ```
+
+## Main Technologies
+
+- [Vue3](https://vuejs.org)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Vite](https://vitejs.dev)
+

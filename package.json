@@ -2,6 +2,7 @@
   "name": "keloapp",
   "version": "0.0.1",
   "license": "MIT",
+  "Author": "Renat Galin (RenSite)",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

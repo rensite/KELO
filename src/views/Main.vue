@@ -7,7 +7,19 @@ LayoutMain.bg-slate-100
 </style>
 
 <script setup>
-  import LayoutMain from '@/layouts/LayoutMain.vue';
+  import LayoutMain from '@/layouts/LayoutMain.vue'
+  import { usePasteStore } from '@/stores/paste'
+  import { useRouter } from 'vue-router'
 
-  const ctrlVLabel = (navigator.userAgentData.platform == 'macOS') ? '⌘ + V' : 'ctrl + V';
+  const router = useRouter()
+  const ctrlVLabel = (navigator.userAgentData.platform == 'macOS') ? '⌘ + V' : 'ctrl + V'
+  const pasteStore = usePasteStore()
+
+  document.addEventListener("paste", function (e) {
+    let clipboardData = e.clipboardData || window.clipboardData
+    let clipboardText = clipboardData.getData('text')
+    pasteStore.setPastedText(clipboardText)
+
+    router.push({ name: 'preview' })
+  });
 </script>

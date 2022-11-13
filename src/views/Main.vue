@@ -1,18 +1,20 @@
 <template lang="pug">
 LayoutMain
-  input(:placeholder='`Start typing or ${ctrlVLabel}`' @input='titleChanged').outline-none.focus_outline-none.text-4xl.text-center.w-full.focus_bg-slate-100.transition-all.rounded-lg.py-4.px-8.mb-8
-  Transition(name='bounce')
-    EditorMenu(v-if='isEditorMenuVisible')
+  .h-full.flex.flex-col.justify-center
+    .container
+      input(:placeholder='`Start typing or ${ctrlVLabel}`' @input='titleChanged').outline-none.focus_outline-none.text-4xl.text-center.w-full.bg-slate-100.focus_bg-white.transition-all.rounded-lg.py-4.px-8.mb-8
+      Transition(name='bounce')
+        EditorMenu(v-if='isEditorMenuVisible')
+  .container 
+    EntriesList
 </template>
-
-<style lang="stylus" scoped>
-</style>
 
 <script setup>
   import { ref } from 'vue';
 
   import LayoutMain from '@/layouts/LayoutMain.vue'
   import EditorMenu from '@/components/EditorMenu.vue'
+  import EntriesList from '@/components/EntriesList.vue'
 
   import { usePasteStore } from '@/stores/paste'
   import { useRouter } from 'vue-router'

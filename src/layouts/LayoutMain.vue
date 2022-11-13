@@ -1,8 +1,7 @@
 <template lang='pug'>
 .h-screen
   Header
-  .container.h-full.flex.flex-col.justify-center
-    slot
+  slot
   Footer
 </template>
 

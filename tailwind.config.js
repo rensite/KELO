@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Ubuntu', ...defaultTheme.fontFamily.sans],
+        'sans': ['Lato', ...defaultTheme.fontFamily.sans],
       },
     }
   },

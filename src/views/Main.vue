@@ -21,7 +21,5 @@ LayoutMain
     let clipboardData = e.clipboardData || window.clipboardData
     let clipboardText = clipboardData.getData('text')
     pasteStore.setPastedText(clipboardText)
-
-    router.push({ name: 'preview' })
   });
 </script>
